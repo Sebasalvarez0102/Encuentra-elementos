@@ -28,10 +28,7 @@
 			font-size: 35px;
 			font-family: 'Cedarville Cursive';
 		}
-		.juegopc{
-			background-image: url("imagenes/nivel1/fondon1.png");
-			position: absolute;
-		}
+
 		.creditos{
 			background: DeepSkyBlue;
 		}	
@@ -84,61 +81,6 @@
 		#start{
 			display: block;
 		}
-		.imgnivel{
-			margin-left: auto;
-			height: 200px;
-			width: 200px;
-			margin-top: 270px;
-			position: relative;
-		}
-		.panel{
-			position: absolute;
-			display: none;
-			margin-top: 496px;
-			left: 0;
-		}
-		.objeto{
-			left: 0;
-			position: absolute;
-			display: none;
-		}
-		.nombres{
-			text-align: left;
-			display: none;
-			position: absolute;
-			left: 55px;
-			top: 580px;
-			font-size: 15px;
-			color:#fff;
-		}
-		#nombre2{
-			top: 620px;
-		}
-		#nombre3{
-			top: 660px;
-		}
-		#nombre4{
-			top: 580px;
-			left: 220px;
-		}
-		#nombre5{
-			left: 220px;
-			top: 620px;
-		}
-		#nombre6{
-			left: 220px;
-			top: 660px;
-		}
-		#puntaje{
-			text-align: left;
-			display: none;
-			position: absolute;
-			left: 55px;
-			top: 690px;
-			font-size: 25px;
-			color:#fff;
-		}
-
 	</style>
 	<script>
 	var secciones = [];
@@ -146,7 +88,6 @@
 	var intinst = 0;	
 	var textop1, textop2;
 	var imginst;
-	var puntos = 0;
 
 	window.onload = function(){
 		inicializarReferencias();
@@ -251,117 +192,6 @@
 			}
 		}
 	}
-
-	function tiempo(){
-		setTimeout(function(){
-			document.getElementById("nivel1logo").style.display="none";
-			document.getElementById("panel1").style.display="initial";
-			document.getElementById("nombre1").style.display="initial";
-			document.getElementById("nombre2").style.display="initial";
-			document.getElementById("nombre3").style.display="initial";
-			document.getElementById("nombre4").style.display="initial";
-			document.getElementById("nombre5").style.display="initial";
-			document.getElementById("nombre6").style.display="initial";
-			document.getElementById("puntaje").style.display="initial";
-			document.getElementById("objeto1").style.display="initial";
-			document.getElementById("objeto2").style.display="initial";
-			document.getElementById("objeto3").style.display="initial";
-			document.getElementById("objeto4").style.display="initial";
-			document.getElementById("objeto5").style.display="initial";
-			document.getElementById("objeto6").style.display="initial";
-		},2000);
-		empezarJuego();
-	}
-
-	function empezarJuego(){
-		var objeto1 = document.getElementById("objeto1");
-		var objeto2 = document.getElementById("objeto2");
-		var objeto3 = document.getElementById("objeto3");
-		var objeto4 = document.getElementById("objeto4");
-		var objeto5 = document.getElementById("objeto5");
-		var objeto6 = document.getElementById("objeto6");
-		var nombre1 = document.getElementById("nombre1");
-		var nombre2 = document.getElementById("nombre2");
-		var nombre3 = document.getElementById("nombre3");
-		var nombre4 = document.getElementById("nombre4");
-		var nombre5 = document.getElementById("nombre5");
-		var nombre6 = document.getElementById("nombre6");
-		var nivel = 1;
-		var objs =[];
-		objs.push({
-			nombre:"Mandragora",
-			x: "0px",
-			y: "315px",
-			ruta: "imagenes/objetos/obj2.png"
-		});
-		objs.push({
-			nombre:"Bolsa de sangre",
-			x: "70px",
-			y: "190px",
-			ruta: "imagenes/objetos/obj1.png"
-		});
-		objs.push({
-			nombre:"Poción verde",
-			x: "230px",
-			y: "329px",
-			ruta: "imagenes/objetos/obj3.png"
-		});
-		objs.push({
-			nombre:"Pluma roja",
-			x: "5px",
-			y: "225px",
-			ruta: "imagenes/objetos/obj4.png"
-		});
-		objs.push({
-			nombre:"Sombrero de bruja",
-			x: "190px",
-			y: "70px",
-			ruta: "imagenes/objetos/obj5.png"
-		});
-		objs.push({
-			nombre:"Carne de dragón",
-			x: "250px",
-			y: "425px",
-			ruta: "imagenes/objetos/obj6.png"
-		});
-		if(nivel == 1){
-			tiempo = 30; //bajar a 15s
-			objeto1.setAttribute("src",objs[0].ruta);
-			nombre1.innerHTML = objs[0].nombre;
-			objeto1.style.top = objs[0].y;
-			objeto1.style.left = objs[0].x;
-			objeto2.setAttribute("src",objs[1].ruta);
-			nombre2.innerHTML = objs[1].nombre;
-			objeto2.style.top = objs[1].y;
-			objeto2.style.left = objs[1].x;
-			objeto3.setAttribute("src",objs[2].ruta);
-			nombre3.innerHTML = objs[2].nombre;
-			objeto3.style.top = objs[2].y;
-			objeto3.style.left = objs[2].x;
-			objeto4.setAttribute("src",objs[3].ruta);
-			nombre4.innerHTML = objs[3].nombre;
-			objeto4.style.top = objs[3].y;
-			objeto4.style.left = objs[3].x;
-			objeto5.setAttribute("src",objs[4].ruta);
-			nombre5.innerHTML = objs[4].nombre;
-			objeto5.style.top = objs[4].y;
-			objeto5.style.left = objs[4].x;
-			objeto6.setAttribute("src",objs[5].ruta);
-			nombre6.innerHTML = objs[5].nombre;
-			objeto6.style.top = objs[5].y;
-			objeto6.style.left = objs[5].x;
-		}
-	}
-
-	function pulsarObjeto(ele){
-		var id = ele.id;
-		var puntaje = document.getElementById("puntaje");
-		puntos += 15;
-		puntaje.innerHTML = "Puntos: "+puntos;
-		document.getElementById(id).style.visibility="hidden";
-	}
-
-
 	</script>
 </head>
 <body>
@@ -392,29 +222,11 @@
         <img id="imginst" src="imagenes/inst1.png" alt="">
         <p id="segundopinst" class="textins">Tendrás una tabla mágica que te giará para saber cuántos objetos deberás buscar</p>
 		<img id="img2inst" src="">
-		<a href="javascript:void();" onClick="cambiarSeccion(6); tiempo()" class="btninicio"><img id ="start" src=""></a>
+		<a href="javascript:void();" onClick="cambiarSeccion(6);" class="btninicio"><img id ="start" src=""></a>
  	</section>
     <!--JuegoPostInstrucciones-->
     <section id ="seccion_6" class="juegopc oculto">
-		<div>
-			<div>
-				<img src="imagenes/nivel1/imgniv1.png" class="imgnivel" id="nivel1logo">
-				<img src="imagenes/nivel1/panel1.png" class="panel" id="panel1">
-				<div id="nombre1" class="nombres">Nombre1</div>
-				<div id="nombre2" class="nombres">Nombre2</div>
-				<div id="nombre3" class="nombres">Nombre3</div>
-				<div id="nombre4" class="nombres">Nombre4</div>
-				<div id="nombre5" class="nombres">Nombre5</div>
-				<div id="nombre6" class="nombres">Nombre6</div>
-				<div id="puntaje">Puntos: 0</div>
-			</div>
-			<img src="" class="objeto" id="objeto1" onclick="pulsarObjeto(this)">
-			<img src="" class="objeto" id="objeto2" onclick="pulsarObjeto(this)">
-			<img src="" class="objeto" id="objeto3" onclick="pulsarObjeto(this)">
-			<img src="" class="objeto" id="objeto4" onclick="pulsarObjeto(this)">
-			<img src="" class="objeto" id="objeto5" onclick="pulsarObjeto(this)">
-			<img src="" class="objeto" id="objeto6" onclick="pulsarObjeto(this)">
-		</div>
+		<h1>hola</h1>
     </section>
 	<!-- Créditos / Autores -->
 	<section id="seccion_4" class="creditos oculto">
