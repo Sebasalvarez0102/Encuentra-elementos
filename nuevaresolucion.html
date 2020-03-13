@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Single App ejemplo</title>
+    <link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Bellota&display=swap" rel="stylesheet">
+	<script src="js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+	<!-- Splash -->
+	<section id="seccion_1" class="splash animated fadeIn">
+		<img src="imagenes/menuinicial/splash.gif">
+	</section>
+	<!-- Home -->
+	<section id="seccion_2" class="home oculto">
+		<audio id="audiomain" loop>
+			<source type="audio/mp3" src="imagenes/menuinicial/musicmain.mp3">
+		</audio>
+		<br>
+		<img src="imagenes/menuinicial/logojuego.png" alt="" id="logomenu">
+		<br>
+		<br>
+		<a href="javascript:void();" onClick="cambiarSeccion(3);musicamain()" class="btninicio"><img src="imagenes/menuinicial/comenzar.png" id="btncomenzar"></a><br><br>
+		<a href="javascript:void();" onClick="cambiarSeccion(4);" class="btninicio"><img src="imagenes/menuinicial/creditos.png" id="btncreditos"></a><br>
+	</section>
+	<!-- Juego -->
+	<section id="seccion_3" class="juego oculto">
+		<a><img src="imagenes//botones/btnflechaizq.png" alt="arrow"  class="flecha" onclick="cambiarinstruccionesI()" id="flechai"></a>
+		<h1 class="titulos" id="insttit">Instrucciones</h1>
+		<a><img src="imagenes/botones/btnflechader.png" alt="arrow"  class="flecha" onclick="cambiarinstruccionesD()" id="flechad"></a>
+		<br> <br>
+		<p id="primerpinst" class="textins">Hola, soy la que te ha invocado como mi familiar y como mi familiar tendrás que ayudarme a hacer una busqueda de diferentes elementos mágicos</p>
+        <img id="imginst" src="imagenes/inst1.png" alt="">
+        <p id="segundopinst" class="textins">Tendrás una tabla mágica que te giará para saber cuántos objetos deberás buscar</p>
+		<img id="img2inst" src="">
+		<a href="javascript:void();" onClick="cambiarSeccion(6); Tiempo()" class="btninicio"><img id ="start" src=""></a>
+ 	</section>
+    <!--JuegoPostInstrucciones-->
+    <section id ="seccion_6" class="juegopc oculto">
+		<div>
+			<div>
+				<img src="imagenes/nivel1/imgniv1.png" class="imgnivel" id="nivel1logo">
+				<img src="imagenes/nivel1/panel1.png" class="panel" id="panel1">
+				<img src="imagenes/componentes/componente5.png" id="componente">
+				<div id="nombre1" class="nombres">Nombre1</div>
+				<div id="nombre2" class="nombres">Nombre2</div>
+				<div id="nombre3" class="nombres">Nombre3</div>
+				<div id="nombre4" class="nombres">Nombre4</div>
+				<div id="nombre5" class="nombres">Nombre5</div>
+				<div id="nombre6" class="nombres">Nombre6</div>
+				<div id ="temporizador" style="color: #fff;">Tiempo</div>
+				<div id="puntaje">Puntos: 0</div>
+			</div>
+			<img src="" class="objeto" id="objeto1" onclick="pulsarObjeto(this)">
+			<img src="" class="objeto" id="objeto2" onclick="pulsarObjeto(this)">
+			<img src="" class="objeto" id="objeto3" onclick="pulsarObjeto(this)">
+			<img src="" class="objeto" id="objeto4" onclick="pulsarObjeto(this)">
+			<img src="" class="objeto" id="objeto5" onclick="pulsarObjeto(this)">
+			<img src="" class="objeto" id="objeto6" onclick="pulsarObjeto(this)">
+			<img class="decoracion" id="deco1">
+			<img class="decoracion" id="deco2">
+			<img class="decoracion" id="deco3">
+			<img class="decoracion" id="deco4">
+			<img class="decoracion" id="deco5">
+			<img class="decoracion" id="deco6">
+		</div>
+    </section>
+	<!-- Créditos / Autores -->
+	<section id="seccion_4" class="creditos oculto">
+		<br>
+		<a href="#" onClick="cambiarSeccion(2);" id="atras"><img src="imagenes/botones/btnflechaizqmin.png" alt=""></a>
+
+		<h1 id="titulocr">Créditos - Estudiantes</h1>
+		<br>
+		<img src="imagenes/creditos/c.jpg" alt="" class="credit"><br>
+		<span class="textcr">Camilo Echeverri Tamayo</span> <br>
+		<span class="textcr">Ingeniero de sistemas</span> <br>
+		<img src="imagenes/creditos/s.jpg" alt="" class="credit"><br>
+		<span class="textcr">Sebastian Riaza Alvarez</span> <br>
+		<span class="textcr">Ingeniero de sistemas</span> <br>
+		<img src="imagenes/creditos/m.jpg" alt="" class="credit"><br>
+		<span class="textcr">Luz Marcela Durango Doria</span><br>
+		<span class="textcr">Diseñadora</span> <br>
+		<img src="imagenes/creditos/sh.png" alt="" id="sh" onclick="audiosh()">
+		<audio id="audio">
+			<source type="audio/mp3" src="imagenes/creditos/sh.mp3">
+		</audio>
+	</section>
+	<!-- Instrucciones -->
+	<section id="seccion_5" class="instrucciones oculto">
+		<a href="#" onClick="cambiarSeccion(2);" class="boton volver">&lt;</a>
+		<h1>Instrucciones</h1>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, explicabo ducimus voluptates suscipit consequatur eligendi eos, hic aperiam sit! Recusandae explicabo provident sapiente beatae nam soluta ab minima omnis sed! <br>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias repellendus aliquam odit, iusto earum ipsum. Repudiandae deleniti corporis, praesentium accusantium aspernatur temporibus quisquam minus, soluta provident molestiae. Tempore, aliquid, fugit. <br>
+		</p>
+		<a href="#" class="boton">&lt;</a>&nbsp;&nbsp;<a href="" class="boton">&gt;</a>
+	</section>
+</body>
+</html>
