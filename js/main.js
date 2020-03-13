@@ -1,5 +1,5 @@
 var secciones = [];
-var tiempo_splash = 5100;
+var tiempo_splash = 100; //mostrar splash 1 vez al perder, fondo con opacidad, margen a las imagenes de creditos, no mostrar creditos al perder, cambiar color del tiempo, resaltar
 var intinst = 0;	
 var textop1, textop2;
 var imginst;
@@ -87,8 +87,8 @@ function cambiarinstruccionesD(){
     if(intinst>0){
         document.getElementById("flechai").style.visibility="visible";
         if(intinst==1){
-            textop1.innerHTML = "Tendrás un límite de tiempo por cada búsqueda, así que realízala en el menor tiempo posible."
-            textop2.innerHTML = "Pero no todo es malo, obtén el talismán del timepo y extiende tu búsqueda";
+            textop1.innerHTML = "Tendrás un límite de tiempo por cada búsqueda, así que realízala en el menor tiempo posible.";
+            textop2.innerHTML = "Pero no todo es malo, obtén el talismán del tiempo y extiende tu búsqueda";
             imginst.setAttribute("src","imagenes/clock.png");
             imginst.style.height="150px";
             imginst.style.width="150px";
@@ -120,7 +120,7 @@ function cambiarinstruccionesI(){
     intinst--;
     if(intinst>=0){
         if(intinst==1){
-            textop1.innerHTML = "Tendrás un límite de tiempo por cada búsqueda, así que realízala en el menor tiempo posible."
+            textop1.innerHTML = "Tendrás un límite de tiempo por cada búsqueda, así que realízala en el menor tiempo posible.";
             textop2.innerHTML = "Pero no todo es malo, obtén el talismán del timepo y extiende tu búsqueda";
             imginst.setAttribute("src","imagenes/clock.png");
             imginst.style.height="150px";
@@ -136,8 +136,8 @@ function cambiarinstruccionesI(){
             start.style.display = "none";
         }
         if(intinst==0){
-            textop1.innerHTML = "Hola, soy la que te ha invocado como mi familiar y como mi familiar tendrás que ayudarme a hacer una busqueda de diferentes elementos mágicos."
-            textop2.innerHTML = "Tendrás una tabla mágica que te giará para saber cuántos objetos deberás buscar";
+            textop1.innerHTML = "Hola, soy la que te ha invocado como mi familiar y como mi familiar tendrás que ayudarme a hacer una busqueda de diferentes elementos mágicos.";
+            textop2.innerHTML = "Tendrás una tabla mágica que te guiará para saber cuántos objetos deberás buscar";
             imginst.setAttribute("src","imagenes/inst1.png");
             imginst.style.height="250px";
             imginst.style.width="300px";
@@ -178,7 +178,7 @@ function Tiempo(){
 }	
 
 function empezarJuego(){
-    tiempoInicial = 16;
+    tiempoInicial = 50;
     document.getElementById("componente").setAttribute("src","imagenes/componentes/componente6.png");
     var decor1 = document.getElementById("deco1");
     var decor2 = document.getElementById("deco2");
@@ -517,10 +517,7 @@ function tiempoTerminado(){
         imagenlogo.style.display = "initial";
         setTimeout(function(){
             location.reload();
-        },2000);
-    }
-    else{
-
+        },2500);
     }
 }
 
