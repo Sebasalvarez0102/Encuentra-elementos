@@ -82,6 +82,7 @@ section{
     width: 200px;
     margin-top: 270px;
     position: relative;
+    z-index: 1;
 }
 .panel{
     z-index: 110;
@@ -180,7 +181,7 @@ section{
     left: 50px;
     top: 656px;
     font-size: 25px;
-    color:#fff;
+    color:#FAEE00;
     font-family: 'Indie Flower', cursive;
 }
 .decoracion{
@@ -213,4 +214,11 @@ section{
     width: 10px;
     margin-top: 70px;
     margin-left: -200px;
+}
+#back{
+    height: 846px;
+    width: 412px;
+    position: absolute;
+    left: 0;
+    top: 0;
 }

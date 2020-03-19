@@ -172,6 +172,7 @@ function Tiempo(){
         document.getElementById("deco4").style.display="initial";
         document.getElementById("deco5").style.display="initial";
         document.getElementById("deco6").style.display="initial";
+        document.getElementById("back").style.display="none";
     },2000);
     clearInterval(idInterval);
     empezarJuego();
@@ -359,13 +360,15 @@ function cambioNivel(){
     imagenlogo.style.marginTop = "270px";
     if(nivel==2){
         imagenlogo.setAttribute("src","imagenes/nivel2/logonivel2.png");
-        document.getElementById("seccion_6").style.background = "url('imagenes/nivel2/escenario.png')"
+        document.getElementById("back").style.display="initial";
+        document.getElementById("seccion_6").style.background = "url('imagenes/nivel2/escenario.png')";
         imagenlogo.style.display = "initial";
         Tiempo();
     }
     if(nivel==3){
         imagenlogo.setAttribute("src","imagenes/nivel3/logonivel3.png");
-        document.getElementById("seccion_6").style.background = "url('imagenes/nivel3/escenario.png')"
+        document.getElementById("back").style.display="initial";
+        document.getElementById("seccion_6").style.background = "url('imagenes/nivel3/escenario.png')";
         imagenlogo.style.display = "initial";
         Tiempo();
     }
